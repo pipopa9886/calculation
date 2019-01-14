@@ -3,7 +3,6 @@ import time
 
 #足し算
 def addition(keta,kuchi,kankaku):
-    s=0
     list=[]
     sum=0
     for a in range(0,kuchi):
@@ -18,7 +17,7 @@ def addition(keta,kuchi,kankaku):
     print("\n答え:",sum)
 
 def much():
-    print("桁数と口数、必要であれば間隔も選んでください")
+    print("桁数と口数、間隔を選んでください")
     print("桁数")
     global keta
     keta=int(input())
