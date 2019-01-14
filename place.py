@@ -4,13 +4,18 @@ import time
 #足し算
 def addition(keta,kuchi,kankaku):
     s=0
-    for i in range(0,kuchi):
-        x=random.randrange(10**(keta-1),10**keta)
-        s += x
-        print(x)
+    list=[]
+    sum=0
+    for a in range(0,kuchi):
+        a=random.randrange(10**(keta-1),10**keta)
+        list.append(a)
+        sum+=a
+
+    for i in list:
+        print("\r{0:d}".format(i),end="")
         time.sleep(kankaku)
     time.sleep(1.2)
-    print("答え:",s)
+    print("\n答え:",sum)
 
 def much():
     print("桁数と口数、必要であれば間隔も選んでください")
@@ -22,8 +27,9 @@ def much():
     kuchi=int(input())
     print("間隔（秒単位）")
     global kankaku
-    kankaku=int(input())
+    kankaku=float(input())
 
 def run():
     much()
     addition(keta,kuchi,kankaku)
+
