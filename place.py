@@ -31,5 +31,12 @@ def much():
 
 def run():
     much()
-    addition(keta,kuchi,kankaku)
+    print("始めます。よろしいですか")
+    print("よろしければ、ENTERを押してください")
+    q=input()
+    if q=="":
+        addition(keta,kuchi,kankaku)
+    else:
+        pass
 
+run()
