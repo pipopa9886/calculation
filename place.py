@@ -42,10 +42,15 @@ def addition(keta,kuchi,kankaku):
     answer=int(input())
     if answer==sum:
         print("正解!")
+        time.sleep(0.5)
+        print("\n答え:",sum)
+        save()
     else:
         print("不正解...")
-    time.sleep(0.5)
-    print("\n答え:",sum)
+        time.sleep(0.5)
+        print("\n答え:",sum)
+
+
 
 def much():
     print("桁数と口数、間隔を選んでください")
@@ -53,6 +58,7 @@ def much():
     global keta
     keta=int(input())
     if keta >10:
+        print("10桁までなので、10桁になります")
         keta=10
     else:
         pass
@@ -73,6 +79,5 @@ def run():
     q=input()
     if q=="":
         addition(keta,kuchi,kankaku)
-        save()
     else:
         pass
