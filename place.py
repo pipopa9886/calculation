@@ -53,6 +53,10 @@ def much():
     print("桁数")
     global keta
     keta=int(input())
+    if keta >10:
+        keta=10
+    else:
+        pass
     print("口数")
     global kuchi
     kuchi=int(input())
