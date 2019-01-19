@@ -5,7 +5,7 @@ import time
 #足し算
 def save():
     print("もし必要なら結果を記録できます")
-    print("保存しますか")
+    print("名前とポイントを保存しますか")
     print("はい:0,いいえ:1")
     save=0
     save=int(input())
@@ -14,7 +14,6 @@ def save():
             menu=json.load(file)
         print("名前を教えてください")
         name=input()
-        point="100"
         c=name not in menu
         if c==True:
             you={"name":name,"point":point}
@@ -60,12 +59,13 @@ def much():
     print("口数")
     global kuchi
     kuchi=int(input())
-    print("間隔（秒単位）")
+    print("間隔 （小数可能）")
     global kankaku
     kankaku=float(input())
+    global point
+    point=(10*keta)*kuchi-(10*kankaku)
 
-def rurn():
-    save()
+
 def run():
     much()
     print("始めます。よろしいですか")
@@ -73,7 +73,6 @@ def run():
     q=input()
     if q=="":
         addition(keta,kuchi,kankaku)
+        save()
     else:
         pass
-
-rurn()
