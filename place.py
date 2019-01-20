@@ -19,6 +19,7 @@ def save():
         name=0
         name=input()
         name_check()
+        print("{}ポイント追加されました。".format(point))
         with open("date.json","w") as f:
             json.dump(menu,f)
     else:
