@@ -10,20 +10,29 @@ def save():
     save=0
     save=int(input())
     if save==0:
+        global menu
+        menu=0
         with open("date.json","r") as file:
             menu=json.load(file)
-        print("名前を教えてください")
+        print("名前を教えてください（数字不可、前回登録時と同じ名前で）")
+        global name
+        name=0
         name=input()
-        c=name not in menu
-        if c==True:
-            you={"name":name,"point":point}
-            menu.append(you)
-            with open("date.json","w") as f:
-                json.dump(menu,f)
-        else:
-            print("あるよ")
+        name_check()
+        with open("date.json","w") as f:
+            json.dump(menu,f)
     else:
         print("中止")
+
+
+def name_check():
+    try:
+        name1=menu[name]
+        add_point=int(menu[name]["point"])
+        add_point+=point
+        menu[name]["point"]=add_point
+    except KeyError:
+        menu[name]={"point":point}
 
 
 def addition(keta,kuchi,kankaku):
@@ -49,7 +58,6 @@ def addition(keta,kuchi,kankaku):
         print("不正解...")
         time.sleep(0.5)
         print("\n答え:",sum)
-
 
 
 def much():
