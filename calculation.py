@@ -1,3 +1,0 @@
-import place
-
-place.run()
