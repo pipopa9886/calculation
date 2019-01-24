@@ -12,7 +12,7 @@ def save():
     if save==0:
         global menu
         menu=0
-        with open("date.json","r") as file:
+        with open("data.json","r") as file:
             menu=json.load(file)
         print("名前を教えてください（数字不可、前回登録時と同じ名前で）")
         global name
@@ -20,7 +20,7 @@ def save():
         name=input()
         name_check()
         print("{}ポイント追加されました。".format(point))
-        with open("date.json","w") as f:
+        with open("data.json","w") as f:
             json.dump(menu,f)
     else:
         print("中止")
