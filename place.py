@@ -2,7 +2,7 @@ import json
 import random
 import time
 
-#足し算
+#セーブ
 def save():
     print("もし必要なら結果を記録できます")
     print("名前とポイントを保存しますか")
